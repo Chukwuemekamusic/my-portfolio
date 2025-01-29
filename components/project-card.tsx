@@ -18,6 +18,7 @@ export function ProjectCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
+      whileHover={{ scale: 1.05 }}
       className="group border rounded-lg p-6 hover:shadow-lg transition-shadow bg-white/50 dark:bg-slate-800/50"
     >
       <div className="flex flex-col h-full">
@@ -48,7 +49,12 @@ export function ProjectCard({
           </div>
         </div>
         {project.image && (
-          <div className="">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            whileHover={{ scale: 1.05 }}
+          >
             <Image
               src={project.image}
               alt={project.title}
@@ -56,7 +62,7 @@ export function ProjectCard({
               height={630}
               className="rounded-lg mb-4"
             />
-          </div>
+          </motion.div>
         )}
 
         {/* Description */}
@@ -70,7 +76,7 @@ export function ProjectCard({
             <Badge
               key={tech}
               variant="outline"
-              className="text-xs font-medium text-slate-600 dark:text-slate-400"
+              className="text-xs font-medium text-slate-600 dark:text-slate-400 cursor-default"
             >
               {tech}
             </Badge>

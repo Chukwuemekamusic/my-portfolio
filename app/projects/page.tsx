@@ -4,31 +4,79 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/project-card";
 import { projects } from "@/data/projects";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ProjectsPage() {
-  const [selectedTech, setSelectedTech] = useState<string>("all");
+  const [input, setInput] = useState("");
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
-  const filteredProjects = projects.filter(
-    (project) => selectedTech === "all" || project.tech.includes(selectedTech)
-  );
-  const uniqueTechs = [...new Set(projects.flatMap((project) => project.tech))];
+  const allTechs = [
+    ...new Set(projects.flatMap((p) => [...p.tech, ...p.majorTech])),
+  ];
+
+  useEffect(() => {
+    const trimmedInput = input.trim().toLowerCase();
+    setFilteredProjects(
+      projects.filter(
+        (project) =>
+          project.tech.some((tech) =>
+            tech.toLowerCase().includes(trimmedInput)
+          ) ||
+          project.majorTech.some((major) =>
+            major.toLowerCase().includes(trimmedInput)
+          )
+      )
+    );
+  }, [input]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setInput(value);
+
+    if (value.trim().length > 0) {
+      setSuggestions(
+        allTechs.filter((tech) =>
+          tech.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+    } else {
+      setSuggestions([]);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!suggestions.length) return;
+
+    switch (e.key) {
+      case "ArrowDown":
+        e.preventDefault();
+        setSelectedIndex((prev) =>
+          prev < suggestions.length - 1 ? prev + 1 : prev
+        );
+        break;
+      case "ArrowUp":
+        e.preventDefault();
+        setSelectedIndex((prev) => (prev > -1 ? prev - 1 : prev));
+        break;
+      case "Enter":
+        e.preventDefault();
+        if (selectedIndex > -1) {
+          setInput(suggestions[selectedIndex]);
+          setSuggestions([]);
+          setSelectedIndex(-1);
+        }
+        break;
+      case "Escape":
+        setSuggestions([]);
+        setSelectedIndex(-1);
+        break;
+    }
+  };
 
   return (
     <div className="px-4 sm:px-8 md:px-12 lg:px-24 xl:px-32 py-12">
-      <select
-        onChange={(e) => setSelectedTech(e.target.value)}
-        className="p-2 border rounded-lg"
-      >
-        <option value="all">All</option>
-        {uniqueTechs.map((tech, index) => (
-          <option key={index} value={tech}>
-            {tech}
-          </option>
-        ))}
-        {/* Add more options */}
-      </select>
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -38,10 +86,49 @@ export default function ProjectsPage() {
           Projects
         </h1>
 
+        <div className="relative w-full">
+          <input
+            type="text"
+            placeholder="Filter by technology..."
+            value={input}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+            className="w-full p-2 border rounded mb-4"
+          />
+
+          {/* Suggestions Dropdown */}
+          {suggestions.length > 0 && (
+            <div className="bg-white shadow-md rounded border mt-1 absolute w-full">
+              {suggestions.map((tech, index) => (
+                <div
+                  key={tech}
+                  onClick={() => {
+                    setInput(tech);
+                    setSuggestions([]);
+                  }}
+                  className={`p-2 hover:bg-gray-100 cursor-pointer ${
+                    index === selectedIndex ? "bg-gray-100" : ""
+                  }`}
+                >
+                  {tech}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
-          ))}
+          {filteredProjects.length > 0 ? (
+            filteredProjects.map((project, index) => (
+              <ProjectCard
+                key={project.title}
+                project={project}
+                index={index}
+              />
+            ))
+          ) : (
+            <p className="text-center col-span-2">No projects found.</p>
+          )}
         </div>
 
         <motion.div
