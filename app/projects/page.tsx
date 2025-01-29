@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/project-card";
 import { projects } from "@/data/projects";
 import { useState, useEffect } from "react";
+import { X } from "lucide-react";
 
 export default function ProjectsPage() {
   const [input, setInput] = useState("");
@@ -93,28 +94,52 @@ export default function ProjectsPage() {
             value={input}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
-            className="w-full p-2 border rounded mb-4"
+            className="w-full p-2 border rounded mb-4 pr-10"
           />
 
-          {/* Suggestions Dropdown */}
-          {suggestions.length > 0 && (
-            <div className="bg-white shadow-md rounded border mt-1 absolute w-full">
-              {suggestions.map((tech, index) => (
-                <div
-                  key={tech}
-                  onClick={() => {
-                    setInput(tech);
-                    setSuggestions([]);
-                  }}
-                  className={`p-2 hover:bg-gray-100 cursor-pointer ${
-                    index === selectedIndex ? "bg-gray-100" : ""
-                  }`}
-                >
-                  {tech}
-                </div>
-              ))}
-            </div>
+          {input && (
+            <button
+              onClick={() => {
+                setInput("");
+                setSuggestions([]);
+              }}
+              className="absolute right-2 top-2 p-1 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300"
+            >
+              <X className="w-5 h-5" />
+            </button>
           )}
+
+          {/* Suggestions Dropdown */}
+          <AnimatePresence>
+            {suggestions.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="bg-white dark:bg-slate-800 shadow-md rounded border mt-1 absolute w-full z-10"
+              >
+                {suggestions.map((tech, index) => (
+                  <motion.div
+                    key={tech}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    onClick={() => {
+                      setInput(tech);
+                      setSuggestions([]);
+                    }}
+                    className={`p-2 hover:bg-gray-100 dark:hover:bg-slate-700 cursor-pointer ${
+                      index === selectedIndex
+                        ? "bg-gray-100 dark:bg-slate-700"
+                        : ""
+                    }`}
+                  >
+                    {tech}
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -127,7 +152,13 @@ export default function ProjectsPage() {
               />
             ))
           ) : (
-            <p className="text-center col-span-2">No projects found.</p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center col-span-2 text-slate-600 dark:text-slate-400"
+            >
+              No projects found. Try another search term!
+            </motion.div>
           )}
         </div>
 
