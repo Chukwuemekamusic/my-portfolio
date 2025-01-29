@@ -13,12 +13,14 @@ import {
   Mail,
 } from "lucide-react";
 import { myConfig } from "@/lib/my-config";
+import { experiences } from "@/data/experience";
+import { ExperienceTimeline } from "@/components/experience-timeline";
 
 export default function Home() {
   return (
     <main className="min-h-screen px-4 sm:px-8 md:px-12 lg:px-24 xl:px-32">
       {/* Hero Section */}
-      <section className="flex flex-col justify-center min-h-[70vh]">
+      <section className="flex flex-col justify-center min-h-[60vh]">
         <motion.h1
           initial={{ opacity: 0, y: 20, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -177,6 +179,17 @@ export default function Home() {
             </div>
           </motion.div>
         </motion.div>
+      </section>
+      {/* Experience Section */}
+      <section className="my-12 md:my-24">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-8"
+        >
+          Experience
+        </motion.h2>
+        <ExperienceTimeline experiences={experiences} />
       </section>
     </main>
   );
