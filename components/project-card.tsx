@@ -48,7 +48,7 @@ export function ProjectCard({
             )}
           </div>
         </div>
-        {project.image && (
+        {/* {project.image && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export function ProjectCard({
               className="rounded-lg mb-4"
             />
           </motion.div>
-        )}
+        )} */}
 
         {/* Description */}
         <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 flex-grow">

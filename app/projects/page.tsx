@@ -94,7 +94,7 @@ export default function ProjectsPage() {
             value={input}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
-            className="w-full p-2 border rounded mb-4 pr-10"
+            className="w-full p-2  border rounded mb-4 pr-10"
           />
 
           {input && (
