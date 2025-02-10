@@ -15,6 +15,7 @@ import {
 import { myConfig } from "@/lib/my-config";
 import { experiences } from "@/data/experience";
 import { ExperienceTimeline } from "@/components/experience-timeline";
+import { techSkills } from "@/data/skills";
 
 export default function Home() {
   return (
@@ -125,10 +126,11 @@ export default function Home() {
                 <GraduationCap className="w-5 h-5 text-slate-700 dark:text-slate-300" />
                 <h3 className="font-semibold">Education</h3>
               </div>
+              <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
+                MSc IT (Distinction) @ Robert Gordon
+              </p>
               <p className="text-sm text-slate-600 dark:text-slate-400">
-                MSc IT (Distinction) @ Robert Gordon University
-                <br />
-                BSc Electrical Engineering
+                BSc Electrical Engineering @ Igbinedion
               </p>
             </div>
           </motion.div>
@@ -141,7 +143,7 @@ export default function Home() {
             className="group"
           >
             <div
-              className="p-6 border rounded-lg bg-white/50 dark:bg-slate-800/50 
+              className="px-6 py-5 border rounded-lg bg-white/50 dark:bg-slate-800/50 
               hover:shadow-lg transition-all duration-300 cursor-default
               group-hover:border-slate-400 dark:group-hover:border-slate-600"
             >
@@ -152,6 +154,17 @@ export default function Home() {
               <p className="text-sm text-slate-600 dark:text-slate-400">
                 Full-Stack Development, Data Analysis, Blockchain, AI/ML
               </p>
+              <div className="flex flex-wrap items-center justify-center gap-x-3 pt-1">
+                {techSkills.map((tech) => (
+                  <div
+                    className="hover:bg-slate-100 dark:hover:bg-slate-700/50 
+                transition-colors duration-200 "
+                    key={tech.name}
+                  >
+                    {tech.icon}
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
 
@@ -171,10 +184,11 @@ export default function Home() {
                 <Users className="w-5 h-5 text-slate-700 dark:text-slate-300" />
                 <h3 className="font-semibold">Community</h3>
               </div>
-              <p className="text-sm text-slate-600 dark:text-slate-400">
+              <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
                 Youth Mentor @ Livingstone Initiative
-                <br />
-                Choir Director & Keyboardist
+              </p>
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                Choir Director | Producer | Recording Artist
               </p>
             </div>
           </motion.div>

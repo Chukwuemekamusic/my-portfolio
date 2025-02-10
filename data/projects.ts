@@ -15,38 +15,49 @@ type majorTech =
   | "Blockchain"
   | "Data Science"
   | "Machine Learning"
-  | "AI";
+  | "AI"
+  | "Game dev";
 
 // data/projects.ts
 export const projects: Project[] = [
   {
     title: "Crowdfunding DApp",
     description:
-      "Decentralized crowdfunding platform on Ethereum with secure smart contracts and IPFS integration.",
+      "Decentralized crowdfunding platform on Ethereum with secure smart contracts and IPFS integration. Designed and tested locally with Hardhat",
     tech: ["Solidity", "React", "Hardhat", "Tailwind", "Web3.js"],
     majorTech: ["Blockchain", "Fullstack"],
-    github: "https://github.com/Chukwuemekamusic/crowdfunding-dapp",
+    github: "https://github.com/Chukwuemekamusic/crowdfunding_dapp",
     demo: "#",
     image: "/lms.png",
   },
   {
     title: "Money Saving App",
     description:
-      "Full-stack savings tracker with OAuth2 authentication, SMTP notifications, and goal analytics.",
+      "A web app that helps users set and achieve savings goals over 6 months or a year. It generates dynamic weekly savings options, tracks progress, and provides a summary of savings made.",
     tech: ["React", "Django", "Redux", "PostgreSQL", "OAuth"],
     majorTech: ["Backend", "Frontend", "Fullstack"],
-    github: "https://github.com/Chukwuemekamusic/money-saver",
+    github: "https://github.com/Chukwuemekamusic/money-saver-app",
+    demo: "https://moneysaverapp.netlify.app/",
     image: "/moneySaver.png",
   },
   {
     title: "DiscussU Platform",
     description:
-      "Academic discussion forum with real-time messaging, role-based access, and topic clustering.",
+      "A collaborative platform where students create and join cross-school discussion rooms within their institution. Built with research-backed features including custom access controls and social networking elements to enhance academic collaboration and peer learning.",
     tech: ["React", "Django", "PostgreSQL"],
     majorTech: ["Backend", "Frontend", "Fullstack"],
-    github: "#",
+    github: "https://github.com/Chukwuemekamusic/DiscussU-react_frontend",
     image: "/lms.png",
     demo: "#",
+  },
+  {
+    title: "AI-Powered Tic-Tac-Toe",
+    description:
+      "An interactive Tic-Tac-Toe game with both AI and multiplayer modes. Built with Python and Pygame, featuring a minimax algorithm AI opponent for challenging gameplay.",
+    tech: ["Python", "Pygame", "Minimax Algorithm"],
+    majorTech: ["AI", "Game dev"],
+    github: "https://github.com/Chukwuemekamusic/tictactoe_AI",
+    image: "/moneySaver.png",
   },
   {
     title: "Industrial Predictive Maintenance",
