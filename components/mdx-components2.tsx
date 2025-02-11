@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Image from "next/image";
+import { CommunityCodeIllustration } from "./blog/CommunityCodeIllustration";
 
 // Custom link component that handles both internal and external links
 const CustomLink = ({
@@ -31,6 +32,9 @@ const CustomLink = ({
 };
 
 export const components = {
+  // Add the CommunityCodeIllustration component
+  CommunityCodeIllustration: CommunityCodeIllustration,
+
   h1: ({ children }: { children: React.ReactNode }) => (
     <h1 className="scroll-m-20 text-3xl font-bold tracking-tight mt-12 mb-6">
       {children}

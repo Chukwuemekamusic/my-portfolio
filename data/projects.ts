@@ -24,10 +24,26 @@ export const projects: Project[] = [
     title: "Crowdfunding DApp",
     description:
       "Decentralized crowdfunding platform on Ethereum with secure smart contracts and IPFS integration. Designed and tested locally with Hardhat",
-    tech: ["Solidity", "React", "Hardhat", "Tailwind", "Web3.js"],
+    tech: ["Solidity", "Next.js", "Hardhat", "Tailwind", "Web3.js"],
     majorTech: ["Blockchain", "Fullstack"],
-    github: "https://github.com/Chukwuemekamusic/crowdfunding_dapp",
-    demo: "#",
+    github: "https://github.com/Chukwuemekamusic/my_crowdfunding",
+    image: "/lms.png",
+  },
+  {
+    title: "Learning Management System (LMS)",
+    description:
+      "A comprehensive platform for managing online courses, featuring user authentication, course creation, and progress tracking.",
+    tech: [
+      "TypeScript",
+      "Next.js",
+      "Prisma",
+      "Tailwind CSS",
+      "React",
+      "PostgreSQL",
+      "Mux",
+    ],
+    github: "https://github.com/Chukwuemekamusic/lms",
+    majorTech: ["Fullstack", "Frontend", "Backend"],
     image: "/lms.png",
   },
   {
@@ -48,7 +64,6 @@ export const projects: Project[] = [
     majorTech: ["Backend", "Frontend", "Fullstack"],
     github: "https://github.com/Chukwuemekamusic/DiscussU-react_frontend",
     image: "/lms.png",
-    demo: "#",
   },
   {
     title: "AI-Powered Tic-Tac-Toe",
@@ -59,23 +74,23 @@ export const projects: Project[] = [
     github: "https://github.com/Chukwuemekamusic/tictactoe_AI",
     image: "/moneySaver.png",
   },
-  {
-    title: "Industrial Predictive Maintenance",
-    description:
-      "AI-powered dashboard predicting equipment failures using IoT sensor data and ML models.",
-    tech: ["Python", "TensorFlow", "React", "Tableau"],
-    majorTech: ["Machine Learning", "Data Science", "AI"],
-    github: "#",
-    image: "/moneySaver.png",
-  },
-  {
-    title: "Token Vesting DApp",
-    description:
-      "Blockchain solution for managing token vesting schedules with customizable cliff periods.",
-    tech: ["Solidity", "Next.js", "The Graph", "TypeChain", "Ethers.js"],
-    majorTech: ["Blockchain", "Fullstack"],
-    github: "#",
-    demo: "#",
-    image: "/moneySaver.png",
-  },
+  // {
+  //   title: "Industrial Predictive Maintenance",
+  //   description:
+  //     "AI-powered dashboard predicting equipment failures using IoT sensor data and ML models.",
+  //   tech: ["Python", "TensorFlow", "React", "Tableau"],
+  //   majorTech: ["Machine Learning", "Data Science", "AI"],
+  //   github: "#",
+  //   image: "/moneySaver.png",
+  // },
+  // {
+  //   title: "Token Vesting DApp",
+  //   description:
+  //     "Blockchain solution for managing token vesting schedules with customizable cliff periods.",
+  //   tech: ["Solidity", "Next.js", "The Graph", "TypeChain", "Ethers.js"],
+  //   majorTech: ["Blockchain", "Fullstack"],
+  //   github: "#",
+  //   demo: "#",
+  //   image: "/moneySaver.png",
+  // },
 ];
