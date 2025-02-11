@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { Project } from "@/data/projects";
 import Link from "next/link";
 import { ExternalLink, Github } from "lucide-react";
-import Image from "next/image";
 
 export function ProjectCard({
   project,

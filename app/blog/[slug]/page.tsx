@@ -9,9 +9,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 interface BlogPostProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export default async function BlogPost({ params }: BlogPostProps) {
