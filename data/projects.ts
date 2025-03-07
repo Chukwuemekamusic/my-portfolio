@@ -21,6 +21,23 @@ type majorTech =
 // data/projects.ts
 export const projects: Project[] = [
   {
+    title: "NGO Management Platform - LOTSI",
+    description:
+      "Comprehensive full-stack solution for Livingstone Off-the-Street Initiative featuring admin dashboard, beneficiary management, public website with volunteer registration, and donation processing.",
+    tech: [
+      "TypeScript",
+      "Next.js",
+      "Prisma",
+      "React",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "RESTful API",
+    ],
+    majorTech: ["Fullstack", "Frontend", "Backend"],
+    github: "", // Leave empty or remove if not public
+    image: "/lotsi.jpg",
+  },
+  {
     title: "Crowdfunding DApp",
     description:
       "Decentralized crowdfunding platform on Ethereum with secure smart contracts and IPFS integration. Designed and tested locally with Hardhat",
