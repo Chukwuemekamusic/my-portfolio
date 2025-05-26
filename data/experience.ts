@@ -20,7 +20,7 @@ export const experiences: Experience[] = [
       "Spearheading the development of a dynamic website to enhance NGO visibility.",
       "Designing and implementing a robust database system to manage organizational data.",
     ],
-    tech: ["Next.js", "PostgreSQL"],
+    tech: ["Next.js", "PostgreSQL", "Tailwind CSS", "TypeScript"],
   },
   {
     title: "Tesco Colleague",
@@ -29,9 +29,7 @@ export const experiences: Experience[] = [
     startDate: "2023",
     endDate: "2024/12",
     description: [
-      "Collaborated with a team to ensure timely stocking and organization of goods.",
-      "Addressed customer inquiries promptly, demonstrating excellent communication and problem-solving skills.",
-      "Maintained accuracy in stock placement, enhancing the overall customer experience.",
+      "Managed stock organization and customer service, ensuring efficient operations and positive shopping experience.",
     ],
   },
 ];
