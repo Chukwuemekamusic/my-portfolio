@@ -63,16 +63,16 @@ export const projects: Project[] = [
     majorTech: ["Fullstack", "Frontend", "Backend"],
     image: "/lms.png",
   },
-  {
-    title: "Money Saving App",
-    description:
-      "A web app that helps users set and achieve savings goals over 6 months or a year. It generates dynamic weekly savings options, tracks progress, and provides a summary of savings made.",
-    tech: ["React", "Django", "Redux", "PostgreSQL", "OAuth"],
-    majorTech: ["Backend", "Frontend", "Fullstack"],
-    github: "https://github.com/Chukwuemekamusic/money-saver-app",
-    demo: "https://moneysaverapp.netlify.app/",
-    image: "/moneySaver.png",
-  },
+  // {
+  //   title: "Money Saving App",
+  //   description:
+  //     "A web app that helps users set and achieve savings goals over 6 months or a year. It generates dynamic weekly savings options, tracks progress, and provides a summary of savings made.",
+  //   tech: ["React", "Django", "Redux", "PostgreSQL", "OAuth"],
+  //   majorTech: ["Backend", "Frontend", "Fullstack"],
+  //   github: "https://github.com/Chukwuemekamusic/money-saver-app",
+  //   demo: "https://moneysaverapp.netlify.app/",
+  //   image: "/moneySaver.png",
+  // },
   {
     title: "DiscussU Platform",
     description:
