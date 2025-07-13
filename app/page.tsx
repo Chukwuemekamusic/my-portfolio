@@ -195,7 +195,7 @@ export default function Home() {
         </motion.div>
       </section>
       {/* Experience Section */}
-      <section className="my-12 md:my-24">
+      {/* <section className="my-12 md:my-24">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -204,7 +204,7 @@ export default function Home() {
           Experience
         </motion.h2>
         <ExperienceTimeline experiences={experiences} />
-      </section>
+      </section> */}
     </main>
   );
 }

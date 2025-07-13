@@ -21,6 +21,22 @@ type majorTech =
 // data/projects.ts
 export const projects: Project[] = [
   {
+    title: "Diamond Storage Subscription Proxy",
+    description:
+      "Advanced upgradeable proxy contract using Diamond Storage pattern for subscription management. Features gas-efficient storage access, atomic operations, and seamless upgrades without state loss.",
+    tech: [
+      "Solidity",
+      "Foundry",
+      "Diamond Storage",
+      "Proxy Patterns",
+      "OpenZeppelin",
+    ],
+    majorTech: ["Blockchain"],
+    github:
+      "https://github.com/Chukwuemekamusic/diamond-storage-subscription-proxy",
+    image: "/diamond-storage.jpg",
+  },
+  {
     title: "NGO Management Platform - LOTSI",
     description:
       "Comprehensive full-stack solution for Livingstone Off-the-Street Initiative featuring admin dashboard, beneficiary management, public website with volunteer registration, and donation processing.",
@@ -36,6 +52,23 @@ export const projects: Project[] = [
     majorTech: ["Fullstack", "Frontend", "Backend"],
     github: "", // Leave empty or remove if not public
     image: "/lotsi.jpg",
+  },
+  {
+    title: "Smart Lottery (Raffle) Contract System",
+    description:
+      "Decentralized, provably fair lottery system with Chainlink VRF v2.5 for verifiable randomness and Chainlink Automation for automated draws. Features comprehensive testing, gas optimization, and production deployment on Sepolia testnet.",
+    tech: [
+      "Solidity",
+      "Foundry",
+      "Chainlink VRF v2.5",
+      "Chainlink Automation",
+      "OpenZeppelin",
+      "Gas Optimization",
+    ],
+    majorTech: ["Blockchain"],
+    github: "https://github.com/Chukwuemekamusic/smart-lottery",
+    image: "/smart-lottery.jpg", // You'll need to create this
+    demo: "https://sepolia.etherscan.io/address/0x2f0a079981ac1baa4fee85619f1f09bb12d9e9e4", // Link to verified contract
   },
   {
     title: "Crowdfunding DApp",
@@ -63,16 +96,6 @@ export const projects: Project[] = [
     majorTech: ["Fullstack", "Frontend", "Backend"],
     image: "/lms.png",
   },
-  // {
-  //   title: "Money Saving App",
-  //   description:
-  //     "A web app that helps users set and achieve savings goals over 6 months or a year. It generates dynamic weekly savings options, tracks progress, and provides a summary of savings made.",
-  //   tech: ["React", "Django", "Redux", "PostgreSQL", "OAuth"],
-  //   majorTech: ["Backend", "Frontend", "Fullstack"],
-  //   github: "https://github.com/Chukwuemekamusic/money-saver-app",
-  //   demo: "https://moneysaverapp.netlify.app/",
-  //   image: "/moneySaver.png",
-  // },
   {
     title: "DiscussU Platform",
     description:
@@ -91,23 +114,4 @@ export const projects: Project[] = [
     github: "https://github.com/Chukwuemekamusic/tictactoe_AI",
     image: "/moneySaver.png",
   },
-  // {
-  //   title: "Industrial Predictive Maintenance",
-  //   description:
-  //     "AI-powered dashboard predicting equipment failures using IoT sensor data and ML models.",
-  //   tech: ["Python", "TensorFlow", "React", "Tableau"],
-  //   majorTech: ["Machine Learning", "Data Science", "AI"],
-  //   github: "#",
-  //   image: "/moneySaver.png",
-  // },
-  // {
-  //   title: "Token Vesting DApp",
-  //   description:
-  //     "Blockchain solution for managing token vesting schedules with customizable cliff periods.",
-  //   tech: ["Solidity", "Next.js", "The Graph", "TypeChain", "Ethers.js"],
-  //   majorTech: ["Blockchain", "Fullstack"],
-  //   github: "#",
-  //   demo: "#",
-  //   image: "/moneySaver.png",
-  // },
 ];
