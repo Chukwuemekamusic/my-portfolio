@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Joseph Anyaegbunam",
   },
   description:
-    "Software developer specializing in full-stack development, blockchain solutions, and data analysis. Based in Aberdeen, building scalable web applications.",
+    "Software developer specializing in blockchain solutions, smart contracts, and full-stack web development. Based in Aberdeen.",
   metadataBase: new URL("https://joseph-anyaegbunam.dev"),
 
   // Keywords
@@ -30,11 +30,13 @@ export const metadata: Metadata = {
     "Software Developer",
     "Full Stack Developer",
     "Blockchain Developer",
+    "Smart Contract Developer",
     "Web Development",
     "React Developer",
     "Next.js Developer",
     "TypeScript",
     "JavaScript",
+    "Solidity",
     "Aberdeen Developer",
     "Joseph Anyaegbunam",
   ],

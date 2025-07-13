@@ -7,6 +7,7 @@ import { components } from "@/components/mdx-components2";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import remarkGfm from "remark-gfm";
 
 interface BlogPostProps {
   params: Promise<{
@@ -76,7 +77,15 @@ export default async function BlogPost({ params }: BlogPostProps) {
           dark:prose-blockquote:text-slate-400
           prose-img:rounded-lg prose-img:shadow-md"
         >
-          <MDXRemote source={content} components={components} />
+          <MDXRemote
+            source={content}
+            components={components}
+            options={{
+              mdxOptions: {
+                remarkPlugins: [remarkGfm],
+              },
+            }}
+          />
         </div>
         <Button
           asChild

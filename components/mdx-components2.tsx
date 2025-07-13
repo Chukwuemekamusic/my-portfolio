@@ -35,6 +35,43 @@ export const components = {
   // Add the CommunityCodeIllustration component
   CommunityCodeIllustration: CommunityCodeIllustration,
 
+  // Table components
+  table: ({ children }: { children: React.ReactNode }) => (
+    <div className="overflow-x-auto my-6">
+      <table className="min-w-full border-collapse border border-slate-300 dark:border-slate-700">
+        {children}
+      </table>
+    </div>
+  ),
+
+  thead: ({ children }: { children: React.ReactNode }) => (
+    <thead className="bg-slate-50 dark:bg-slate-800">{children}</thead>
+  ),
+
+  tbody: ({ children }: { children: React.ReactNode }) => (
+    <tbody>{children}</tbody>
+  ),
+
+  tr: ({ children }: { children: React.ReactNode }) => (
+    <tr className="border-b border-slate-200 dark:border-slate-600">
+      {children}
+    </tr>
+  ),
+
+  th: ({ children }: { children: React.ReactNode }) => (
+    <th className="px-4 py-2 text-left font-semibold border-r border-slate-200 dark:border-slate-600">
+      {children}
+    </th>
+  ),
+
+  td: ({ children }: { children: React.ReactNode }) => (
+    <td className="px-4 py-2 border-r border-slate-200 dark:border-slate-600">
+      {children}
+    </td>
+  ),
+
+  // Other components
+
   h1: ({ children }: { children: React.ReactNode }) => (
     <h1 className="scroll-m-20 text-3xl font-bold tracking-tight mt-12 mb-6">
       {children}

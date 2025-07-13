@@ -36,8 +36,8 @@ export default function Home() {
           transition={{ delay: 0.1 }}
           className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl"
         >
-          Software developer and data analyst based in Aberdeen, building
-          scalable web applications and blockchain solutions.
+          Software developer specializing in blockchain solutions, smart
+          contracts, and full-stack web development. Based in Aberdeen.
         </motion.p>
 
         <motion.div
