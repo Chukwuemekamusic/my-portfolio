@@ -1,5 +1,5 @@
 // my-portfolio/lib/config.ts
 export const myConfig = {
   cvUrl:
-    "https://ao70elklc6.ufs.sh/f/rLozomgaUGKbDYmhRDfTztORU2fExvYKCP6yBbprJImk0eFh",
+    "https://ao70elklc6.ufs.sh/f/rLozomgaUGKbZ0ClEJxYces79Of5rj0xEobdVTIQG2RMXivw",
 };

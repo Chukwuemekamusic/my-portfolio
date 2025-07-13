@@ -13,8 +13,8 @@ import {
   Mail,
 } from "lucide-react";
 import { myConfig } from "@/lib/my-config";
-import { experiences } from "@/data/experience";
-import { ExperienceTimeline } from "@/components/experience-timeline";
+// import { experiences } from "@/data/experience";
+// import { ExperienceTimeline } from "@/components/experience-timeline";
 import { techSkills } from "@/data/skills";
 
 export default function Home() {
