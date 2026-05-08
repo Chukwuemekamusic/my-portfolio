@@ -1,5 +1,4 @@
 // my-portfolio/lib/config.ts
 export const myConfig = {
-  cvUrl:
-    "https://ao70elklc6.ufs.sh/f/rLozomgaUGKbZ0ClEJxYces79Of5rj0xEobdVTIQG2RMXivw",
+  cvUrl: "/CV/Joseph_Anyaegbunam_Software_Developer_CV.pdf",
 };

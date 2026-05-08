@@ -64,8 +64,6 @@ export default function Home() {
               href={myConfig.cvUrl}
               download="Joseph E Anyaegbunam CV.pdf"
               className="flex items-center gap-2"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <Download className="w-4 h-4" />
               Download CV

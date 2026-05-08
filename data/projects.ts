@@ -39,7 +39,7 @@ export const projects: Project[] = [
   {
     title: "NGO Management Platform - LOTSI",
     description:
-      "Comprehensive full-stack solution for Livingstone Off-the-Street Initiative featuring admin dashboard, beneficiary management, public website with volunteer registration, and donation processing.",
+      "Comprehensive full-stack solution for Livingstones Off-the-Street Initiative featuring admin dashboard, beneficiary management, public website with volunteer registration, and donation processing.",
     tech: [
       "TypeScript",
       "Next.js",
@@ -80,23 +80,6 @@ export const projects: Project[] = [
     image: "/lms.png",
   },
   {
-    title: "Learning Management System (LMS)",
-    description:
-      "A comprehensive platform for managing online courses, featuring user authentication, course creation, and progress tracking.",
-    tech: [
-      "TypeScript",
-      "Next.js",
-      "Prisma",
-      "Tailwind CSS",
-      "React",
-      "PostgreSQL",
-      "Mux",
-    ],
-    github: "https://github.com/Chukwuemekamusic/lms",
-    majorTech: ["Fullstack", "Frontend", "Backend"],
-    image: "/lms.png",
-  },
-  {
     title: "DiscussU Platform",
     description:
       "A collaborative platform where students create and join cross-school discussion rooms within their institution. Built with research-backed features including custom access controls and social networking elements to enhance academic collaboration and peer learning.",
@@ -115,3 +98,21 @@ export const projects: Project[] = [
     image: "/moneySaver.png",
   },
 ];
+
+// {
+//   title: "Learning Management System (LMS)",
+//   description:
+//     "A comprehensive platform for managing online courses, featuring user authentication, course creation, and progress tracking.",
+//   tech: [
+//     "TypeScript",
+//     "Next.js",
+//     "Prisma",
+//     "Tailwind CSS",
+//     "React",
+//     "PostgreSQL",
+//     "Mux",
+//   ],
+//   github: "https://github.com/Chukwuemekamusic/lms",
+//   majorTech: ["Fullstack", "Frontend", "Backend"],
+//   image: "/lms.png",
+// },
