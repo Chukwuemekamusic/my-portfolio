@@ -60,6 +60,7 @@ Align both the CV and portfolio around a single, consistent identity: **Backend 
 There is no test framework installed. `npm run build` is the primary correctness check — it runs TypeScript compilation and ESLint.
 
 **What constitutes a good check for this change:**
+
 - `npm run build` passes with no type errors or lint warnings after all edits.
 - The three new `react-icons/si` icon imports (`SiDocker`, `SiLinux`, `SiKubernetes`) exist in the installed package — verify by checking the import compiles cleanly.
 - The `roles` array length and string values in `app/page.tsx` match the agreed rotator order exactly.

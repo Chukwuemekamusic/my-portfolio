@@ -67,18 +67,27 @@ export default function Home() {
           </h1>
 
           {/* Role rotator */}
-          <div className="h-9 overflow-hidden mb-4">
+          <div className="h-10 overflow-hidden mb-4">
             <AnimatePresence mode="wait">
-              <motion.p
+              <motion.div
                 key={roleIndex}
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="text-lg sm:text-xl text-slate-600 dark:text-slate-400"
+                className="inline-flex flex-col gap-1 items-start"
               >
-                {roles[roleIndex]}
-              </motion.p>
+                <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400">
+                  {roles[roleIndex]}
+                </p>
+                <motion.span
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.35, delay: 0.25, ease: "easeOut" }}
+                  className="block h-px w-full origin-left"
+                  style={{ backgroundColor: "var(--brand-accent)" }}
+                />
+              </motion.div>
             </AnimatePresence>
           </div>
 
