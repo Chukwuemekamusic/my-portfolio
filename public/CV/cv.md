@@ -1,8 +1,8 @@
 # Joseph Anyaegbunam
 
-**Backend Engineer | Full-Stack | Data Pipelines | Python | Distributed Systems**
+**Backend Engineer | Full-Stack | Blockchain | DevOps**
 
-joseph.emeka.dev@gmail.com · Glasgow, UK · +447359498514 ·
+joseph.emeka.dev@gmail.com · Aberdeen, UK · +447359498514 ·
 [linkedin.com/in/joseph-anyaegbunam-b1a430253](https://www.linkedin.com/in/joseph-anyaegbunam-b1a430253/) ·
 [github.com/chukwuemekamusic](https://github.com/chukwuemekamusic) ·
 [joseph-anyaegbunam.dev](https://joseph-anyaegbunam.dev)
@@ -11,7 +11,7 @@ joseph.emeka.dev@gmail.com · Glasgow, UK · +447359498514 ·
 
 ## PROFILE
 
-Backend and full-stack engineer with hands-on experience building production-grade ETL pipelines, distributed systems, and scalable APIs. Following a decade in music production and studio management, a deliberate pivot into software engineering — completing an MSc in Information Technology with Distinction and the Best Graduating Student Award — has led to focused backend and blockchain engineering work, with expanding DevOps capability (CKA in progress). Strong Python foundation, practical experience across DeFi protocols and smart contract architecture, and a systematic approach to testing and system reliability.
+Backend and full-stack engineer building production-grade ETL pipelines, scalable APIs, and smart contract systems, with a growing DevOps practice (CKA in progress). Following a decade in music production and studio management, a deliberate pivot into software engineering (MSc with Distinction, Best Graduating Student) led to focused backend and blockchain engineering work. Strong Python foundation, practical experience across DeFi protocols and smart contract architecture, and a systematic approach to testing and system reliability.
 
 ---
 

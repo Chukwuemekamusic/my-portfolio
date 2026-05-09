@@ -39,6 +39,23 @@ export const projects: Project[] = [
     github: "https://github.com/Chukwuemekamusic/reportflow",
   },
   {
+    title: "NGO Management Platform - LOTSI",
+    description:
+      "Full-stack platform for an NGO supporting at-risk youth, handling sensitive personal data across donor records, beneficiary information, school sponsorship tracking, and mentor-mentee scheduling. Features a structured PostgreSQL schema with Role-Based Access Control, automated financial workflows with payment gateway integration, a scalable RESTful API, and a dynamic CMS for staff to manage the public-facing site without developer involvement.",
+    tech: [
+      "TypeScript",
+      "Next.js",
+      "Prisma",
+      "React",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "RESTful API",
+    ],
+    majorTech: ["Fullstack", "Frontend", "Backend"],
+    github: "",
+    image: "/lotsi.jpg",
+  },
+  {
     title: "Isolated Lending Market Protocol",
     description:
       "Isolated lending protocol on Base L2 with MEV-resistant Dutch auction liquidation and a dual-source oracle system combining Chainlink and Uniswap V3 TWAP with staleness and deviation guards. Reduced per-market deployment gas costs by ~95% using OpenZeppelin minimal proxy pattern (EIP-1167). Covered by 58+ unit, integration, invariant, and fork tests written in Foundry.",
@@ -75,23 +92,6 @@ export const projects: Project[] = [
     demo: "https://my-crowdfunding.vercel.app/",
   },
   {
-    title: "NGO Management Platform - LOTSI",
-    description:
-      "Full-stack platform for an NGO supporting at-risk youth, handling sensitive personal data across donor records, beneficiary information, school sponsorship tracking, and mentor-mentee scheduling. Features a structured PostgreSQL schema with Role-Based Access Control, automated financial workflows with payment gateway integration, a scalable RESTful API, and a dynamic CMS for staff to manage the public-facing site without developer involvement.",
-    tech: [
-      "TypeScript",
-      "Next.js",
-      "Prisma",
-      "React",
-      "PostgreSQL",
-      "Tailwind CSS",
-      "RESTful API",
-    ],
-    majorTech: ["Fullstack", "Frontend", "Backend"],
-    github: "",
-    image: "/lotsi.jpg",
-  },
-  {
     title: "Smart Lottery (Raffle) Contract System",
     description:
       "Decentralized, provably fair lottery system with Chainlink VRF v2.5 for verifiable randomness and Chainlink Automation for automated draws. Features comprehensive testing, gas optimization, and production deployment on Sepolia testnet.",
@@ -106,22 +106,6 @@ export const projects: Project[] = [
     github: "https://github.com/Chukwuemekamusic/smart-lottery",
     image: "/smart-lottery.jpg",
     demo: "https://sepolia.etherscan.io/address/0x2f0a079981ac1baa4fee85619f1f09bb12d9e9e4",
-  },
-  {
-    title: "Diamond Storage Subscription Proxy",
-    description:
-      "Advanced upgradeable proxy contract using Diamond Storage pattern for subscription management. Features gas-efficient storage access, atomic operations, and seamless upgrades without state loss.",
-    tech: [
-      "Solidity",
-      "Foundry",
-      "Diamond Storage",
-      "Proxy Patterns",
-      "OpenZeppelin",
-    ],
-    majorTech: ["Blockchain"],
-    github:
-      "https://github.com/Chukwuemekamusic/diamond-storage-subscription-proxy",
-    image: "/diamond-storage.jpg",
   },
 ];
 

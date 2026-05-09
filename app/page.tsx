@@ -20,9 +20,9 @@ import { MagneticButton } from "@/components/magnetic-button";
 import { useEffect, useState } from "react";
 
 const roles = [
+  "Backend Engineer",
   "Full-Stack Developer",
   "Blockchain Engineer",
-  "Smart Contract Auditor",
 ];
 
 export default function Home() {
@@ -88,8 +88,8 @@ export default function Home() {
             transition={{ delay: 0.6 }}
             className="text-base sm:text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-2xl"
           >
-            Software developer specializing in blockchain solutions, smart
-            contracts, and full-stack web development. Based in Aberdeen.
+            Backend and full-stack engineer with a track record in production
+            APIs, data pipelines, and smart contract systems.
           </motion.p>
 
           <motion.div

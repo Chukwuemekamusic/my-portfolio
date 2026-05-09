@@ -8,6 +8,9 @@ import {
   SiNextdotjs,
   SiPostgresql,
   SiTailwindcss,
+  SiDocker,
+  SiLinux,
+  SiKubernetes,
 } from "react-icons/si";
 
 export const techSkills = [
@@ -31,5 +34,11 @@ export const techSkills = [
   {
     name: "TailwindCSS",
     icon: <SiTailwindcss className="w-5 h-5 text-teal-400" />,
+  },
+  { name: "Docker", icon: <SiDocker className="w-5 h-5 text-blue-400" /> },
+  { name: "Linux", icon: <SiLinux className="w-5 h-5 text-yellow-600" /> },
+  {
+    name: "Kubernetes",
+    icon: <SiKubernetes className="w-5 h-5 text-blue-500" />,
   },
 ];
