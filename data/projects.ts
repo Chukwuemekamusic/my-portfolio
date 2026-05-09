@@ -21,6 +21,93 @@ type majorTech =
 // data/projects.ts
 export const projects: Project[] = [
   {
+    title: "ReportFlow — ETL Data Processing & Reporting Pipeline",
+    description:
+      "End-to-end async ETL pipeline extracting tenant-scoped data from PostgreSQL, transforming through aggregation and business logic, and loading formatted PDF outputs into MinIO object storage. Features a distributed multi-worker Celery task queue with priority-based job lanes, exponential backoff retries, idempotency key checking, rate limiting, and real-time job progress via WebSocket (Redis pub/sub). Containerised with Docker Compose and a GitHub Actions CI pipeline.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "Celery",
+      "Redis",
+      "PostgreSQL",
+      "MinIO",
+      "Docker",
+      "GitHub Actions",
+      "WebSockets",
+    ],
+    majorTech: ["Backend"],
+    github: "https://github.com/Chukwuemekamusic/reportflow",
+  },
+  {
+    title: "Isolated Lending Market Protocol",
+    description:
+      "Isolated lending protocol on Base L2 with MEV-resistant Dutch auction liquidation and a dual-source oracle system combining Chainlink and Uniswap V3 TWAP with staleness and deviation guards. Reduced per-market deployment gas costs by ~95% using OpenZeppelin minimal proxy pattern (EIP-1167). Covered by 58+ unit, integration, invariant, and fork tests written in Foundry.",
+    tech: [
+      "Solidity",
+      "Foundry",
+      "TypeScript",
+      "Next.js",
+      "Chainlink",
+      "Uniswap V3",
+      "OpenZeppelin",
+      "EIP-1167",
+    ],
+    majorTech: ["Blockchain", "Fullstack"],
+    github: "https://github.com/Chukwuemekamusic/isolated-lending-market",
+    demo: "https://ism-protocol.vercel.app/",
+  },
+  {
+    title: "Decentralised Crowdfunding Platform",
+    description:
+      "Full-stack Web3 dApp from smart contract to frontend: campaign lifecycle management, secure donation handling with reentrancy protection, and struct packing for gas efficiency — deployed and verified on Sepolia testnet. Integrated The Graph Protocol to index six on-chain event types (donations, campaign creation, withdrawals) via a custom subgraph, eliminating the need for a centralised database. Implemented IPFS/Pinata for decentralised media storage; achieved ~40% gas savings through struct packing.",
+    tech: [
+      "Solidity",
+      "Next.js",
+      "TypeScript",
+      "The Graph Protocol",
+      "IPFS",
+      "Pinata",
+      "Foundry",
+      "Ethers.js",
+    ],
+    majorTech: ["Blockchain", "Fullstack"],
+    github: "https://github.com/Chukwuemekamusic/my_crowdfunding",
+    demo: "https://my-crowdfunding.vercel.app/",
+  },
+  {
+    title: "NGO Management Platform - LOTSI",
+    description:
+      "Full-stack platform for an NGO supporting at-risk youth, handling sensitive personal data across donor records, beneficiary information, school sponsorship tracking, and mentor-mentee scheduling. Features a structured PostgreSQL schema with Role-Based Access Control, automated financial workflows with payment gateway integration, a scalable RESTful API, and a dynamic CMS for staff to manage the public-facing site without developer involvement.",
+    tech: [
+      "TypeScript",
+      "Next.js",
+      "Prisma",
+      "React",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "RESTful API",
+    ],
+    majorTech: ["Fullstack", "Frontend", "Backend"],
+    github: "",
+    image: "/lotsi.jpg",
+  },
+  {
+    title: "Smart Lottery (Raffle) Contract System",
+    description:
+      "Decentralized, provably fair lottery system with Chainlink VRF v2.5 for verifiable randomness and Chainlink Automation for automated draws. Features comprehensive testing, gas optimization, and production deployment on Sepolia testnet.",
+    tech: [
+      "Solidity",
+      "Foundry",
+      "Chainlink VRF v2.5",
+      "Chainlink Automation",
+      "OpenZeppelin",
+    ],
+    majorTech: ["Blockchain"],
+    github: "https://github.com/Chukwuemekamusic/smart-lottery",
+    image: "/smart-lottery.jpg",
+    demo: "https://sepolia.etherscan.io/address/0x2f0a079981ac1baa4fee85619f1f09bb12d9e9e4",
+  },
+  {
     title: "Diamond Storage Subscription Proxy",
     description:
       "Advanced upgradeable proxy contract using Diamond Storage pattern for subscription management. Features gas-efficient storage access, atomic operations, and seamless upgrades without state loss.",
@@ -35,67 +122,6 @@ export const projects: Project[] = [
     github:
       "https://github.com/Chukwuemekamusic/diamond-storage-subscription-proxy",
     image: "/diamond-storage.jpg",
-  },
-  {
-    title: "NGO Management Platform - LOTSI",
-    description:
-      "Comprehensive full-stack solution for Livingstones Off-the-Street Initiative featuring admin dashboard, beneficiary management, public website with volunteer registration, and donation processing.",
-    tech: [
-      "TypeScript",
-      "Next.js",
-      "Prisma",
-      "React",
-      "PostgreSQL",
-      "Tailwind CSS",
-      "RESTful API",
-    ],
-    majorTech: ["Fullstack", "Frontend", "Backend"],
-    github: "", // Leave empty or remove if not public
-    image: "/lotsi.jpg",
-  },
-  {
-    title: "Smart Lottery (Raffle) Contract System",
-    description:
-      "Decentralized, provably fair lottery system with Chainlink VRF v2.5 for verifiable randomness and Chainlink Automation for automated draws. Features comprehensive testing, gas optimization, and production deployment on Sepolia testnet.",
-    tech: [
-      "Solidity",
-      "Foundry",
-      "Chainlink VRF v2.5",
-      "Chainlink Automation",
-      "OpenZeppelin",
-      "Gas Optimization",
-    ],
-    majorTech: ["Blockchain"],
-    github: "https://github.com/Chukwuemekamusic/smart-lottery",
-    image: "/smart-lottery.jpg", // You'll need to create this
-    demo: "https://sepolia.etherscan.io/address/0x2f0a079981ac1baa4fee85619f1f09bb12d9e9e4", // Link to verified contract
-  },
-  {
-    title: "Crowdfunding DApp",
-    description:
-      "Decentralized crowdfunding platform on Ethereum with secure smart contracts and IPFS integration. Designed and tested locally with Hardhat",
-    tech: ["Solidity", "Next.js", "Hardhat", "Tailwind", "Web3.js"],
-    majorTech: ["Blockchain", "Fullstack"],
-    github: "https://github.com/Chukwuemekamusic/my_crowdfunding",
-    image: "/lms.png",
-  },
-  {
-    title: "DiscussU Platform",
-    description:
-      "A collaborative platform where students create and join cross-school discussion rooms within their institution. Built with research-backed features including custom access controls and social networking elements to enhance academic collaboration and peer learning.",
-    tech: ["React", "Django", "PostgreSQL"],
-    majorTech: ["Backend", "Frontend", "Fullstack"],
-    github: "https://github.com/Chukwuemekamusic/DiscussU-react_frontend",
-    image: "/lms.png",
-  },
-  {
-    title: "AI-Powered Tic-Tac-Toe",
-    description:
-      "An interactive Tic-Tac-Toe game with both AI and multiplayer modes. Built with Python and Pygame, featuring a minimax algorithm AI opponent for challenging gameplay.",
-    tech: ["Python", "Pygame", "Minimax Algorithm"],
-    majorTech: ["AI", "Game dev"],
-    github: "https://github.com/Chukwuemekamusic/tictactoe_AI",
-    image: "/moneySaver.png",
   },
 ];
 
