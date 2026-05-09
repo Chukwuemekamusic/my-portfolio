@@ -2,12 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer base {
   :root {
+    /* shadcn tokens */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -20,8 +17,9 @@ body {
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent remapped to brand purple — light mode: reduced intensity */
+    --accent: 252 60% 55%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
@@ -33,6 +31,12 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+
+    /* Brand accent tokens — light mode */
+    --brand-accent: #5b3fcf;
+    --brand-accent-dim: rgb(91 63 207 / 0.15);
+    --brand-accent-glow: rgb(91 63 207 / 0.35);
+    --brand-accent-border: rgb(91 63 207 / 0.20);
   }
 
   .dark {
@@ -48,8 +52,9 @@ body {
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Accent remapped to brand purple — dark mode: full intensity */
+    --accent: 252 95% 68%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
@@ -60,6 +65,12 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+
+    /* Brand accent tokens — dark mode */
+    --brand-accent: #7c5cfc;
+    --brand-accent-dim: rgb(124 92 252 / 0.15);
+    --brand-accent-glow: rgb(124 92 252 / 0.40);
+    --brand-accent-border: rgb(124 92 252 / 0.20);
   }
 }
 
@@ -69,10 +80,52 @@ body {
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-mono;
+  }
+
+  h1,
+  h2 {
+    @apply font-display;
   }
 }
 
+/* Noise grain overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+  pointer-events: none;
+  z-index: 9;
+  opacity: 0.02;
+}
+
+.dark body::after {
+  opacity: 0.03;
+}
+
+/* Marquee scroll animations */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
 
 .text-glow {
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);

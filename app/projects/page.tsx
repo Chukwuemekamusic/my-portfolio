@@ -78,14 +78,15 @@ export default function ProjectsPage() {
 
   return (
     <div className="px-4 sm:px-8 md:px-12 lg:px-24 xl:px-32 py-12">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="max-w-4xl mx-auto"
-      >
-        <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-8">
+      <div className="max-w-4xl mx-auto">
+        <motion.h1
+          initial={{ clipPath: "inset(0 0 100% 0)" }}
+          animate={{ clipPath: "inset(0 0 0% 0)" }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-8"
+        >
           Projects
-        </h1>
+        </motion.h1>
 
         <div className="relative w-full">
           <input
@@ -173,7 +174,7 @@ export default function ProjectsPage() {
             </Link>
           </Button>
         </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 }
