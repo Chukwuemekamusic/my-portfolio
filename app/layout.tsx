@@ -26,12 +26,13 @@ export const metadata: Metadata = {
     template: "%s | Joseph Anyaegbunam",
   },
   description:
-    "Software developer specializing in blockchain solutions, smart contracts, and full-stack web development. Based in Aberdeen.",
+    "Backend and full-stack engineer with a track record in production APIs, data pipelines, and smart contract systems.",
   metadataBase: new URL("https://joseph-anyaegbunam.dev"),
 
   // Keywords
   keywords: [
     "Software Developer",
+    "Backend Engineer",
     "Full Stack Developer",
     "Blockchain Developer",
     "Smart Contract Developer",

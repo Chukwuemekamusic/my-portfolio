@@ -11,7 +11,6 @@ import {
   Github,
   Linkedin,
   Mail,
-  ChevronDown,
 } from "lucide-react";
 import { myConfig } from "@/lib/my-config";
 import { techSkills } from "@/data/skills";
@@ -163,93 +162,189 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator — mouse icon */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
-          className="hidden sm:block absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2"
         >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          <svg
+            width="22"
+            height="36"
+            viewBox="0 0 22 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ color: "var(--brand-accent)", opacity: 0.55 }}
           >
-            <ChevronDown className="w-6 h-6 text-slate-400" />
-          </motion.div>
+            <rect x="1" y="1" width="20" height="34" rx="10" stroke="currentColor" strokeWidth="1.5" />
+            <motion.rect
+              x={9.5}
+              y={8}
+              width={3}
+              height={6}
+              rx={1.5}
+              fill="currentColor"
+              animate={{ y: [8, 16, 8], opacity: [1, 0.3, 1] }}
+              transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
+            />
+          </svg>
         </motion.div>
       </section>
 
       {/* About Cards */}
       <section className="my-12 md:my-24">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {/* Education */}
           <motion.div
             initial={{ clipPath: "inset(0 0 100% 0)" }}
             whileInView={{ clipPath: "inset(0 0 0% 0)" }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="group"
           >
-            <div className="p-6 border rounded-lg bg-white/50 dark:bg-slate-800/50 hover:shadow-lg transition-all duration-300 cursor-default group-hover:border-slate-400 dark:group-hover:border-slate-600">
-              <div className="flex items-center gap-2 mb-3">
-                <GraduationCap className="w-5 h-5 text-slate-700 dark:text-slate-300" />
-                <h3 className="font-semibold">Education</h3>
+            <motion.div
+              whileHover={{
+                borderColor: "var(--brand-accent)",
+                boxShadow: "0 4px 20px var(--brand-accent-dim)",
+              }}
+              transition={{ duration: 0.2 }}
+              className="relative overflow-hidden p-6 border rounded-lg bg-white/50 dark:bg-slate-800/50 cursor-default h-full"
+              style={{ borderColor: "var(--brand-accent-border)" }}
+            >
+              <span className="absolute -bottom-1 right-3 text-8xl font-display font-black leading-none select-none pointer-events-none opacity-[0.04] dark:opacity-[0.06]">
+                01
+              </span>
+              <div
+                className="absolute left-0 top-0 bottom-0 w-0.5 opacity-40"
+                style={{ backgroundColor: "var(--brand-accent)" }}
+              />
+              <div className="flex items-center gap-2.5 mb-4 pl-3">
+                <div
+                  className="p-1.5 rounded-md"
+                  style={{ backgroundColor: "var(--brand-accent-dim)" }}
+                >
+                  <GraduationCap
+                    className="w-4 h-4"
+                    style={{ color: "var(--brand-accent)" }}
+                  />
+                </div>
+                <h3 className="font-mono font-semibold text-xs uppercase tracking-widest">
+                  Education
+                </h3>
               </div>
-              <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
-                MSc IT (Distinction) @ Robert Gordon
-              </p>
-              <p className="text-sm text-slate-600 dark:text-slate-400">
-                BSc Electrical Engineering @ Igbinedion
-              </p>
-            </div>
+              <div className="pl-3">
+                <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
+                  MSc IT (Distinction) @ Robert Gordon
+                </p>
+                <p className="text-sm text-slate-600 dark:text-slate-400">
+                  BSc Electrical Engineering @ Igbinedion
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
 
+          {/* Expertise */}
           <motion.div
             initial={{ clipPath: "inset(0 0 100% 0)" }}
             whileInView={{ clipPath: "inset(0 0 0% 0)" }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="group"
           >
-            <div className="px-6 py-5 border rounded-lg bg-white/50 dark:bg-slate-800/50 hover:shadow-lg transition-all duration-300 cursor-default group-hover:border-slate-400 dark:group-hover:border-slate-600">
-              <div className="flex items-center gap-2 mb-3">
-                <Code className="w-5 h-5 text-slate-700 dark:text-slate-300" />
-                <h3 className="font-semibold">Expertise</h3>
+            <motion.div
+              whileHover={{
+                borderColor: "var(--brand-accent)",
+                boxShadow: "0 4px 20px var(--brand-accent-dim)",
+              }}
+              transition={{ duration: 0.2 }}
+              className="relative overflow-hidden p-6 border rounded-lg bg-white/50 dark:bg-slate-800/50 cursor-default h-full"
+              style={{ borderColor: "var(--brand-accent-border)" }}
+            >
+              <span className="absolute -bottom-1 right-3 text-8xl font-display font-black leading-none select-none pointer-events-none opacity-[0.04] dark:opacity-[0.06]">
+                02
+              </span>
+              <div
+                className="absolute left-0 top-0 bottom-0 w-0.5 opacity-40"
+                style={{ backgroundColor: "var(--brand-accent)" }}
+              />
+              <div className="flex items-center gap-2.5 mb-3 pl-3">
+                <div
+                  className="p-1.5 rounded-md"
+                  style={{ backgroundColor: "var(--brand-accent-dim)" }}
+                >
+                  <Code
+                    className="w-4 h-4"
+                    style={{ color: "var(--brand-accent)" }}
+                  />
+                </div>
+                <h3 className="font-mono font-semibold text-xs uppercase tracking-widest">
+                  Expertise
+                </h3>
               </div>
-              <p className="text-sm text-slate-600 dark:text-slate-400">
-                Full-Stack Development, Data Analysis, Blockchain, AI/ML
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-x-3 pt-1">
-                {techSkills.map((tech) => (
-                  <div
-                    key={tech.name}
-                    className="hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors duration-200"
-                  >
-                    {tech.icon}
-                  </div>
-                ))}
+              <div className="pl-3">
+                <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
+                  Full-Stack · Data Analysis · Blockchain · AI/ML
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {techSkills.map((tech) => (
+                    <div
+                      key={tech.name}
+                      title={tech.name}
+                      className="p-1.5 rounded-md transition-colors duration-150 hover:bg-slate-100 dark:hover:bg-slate-700/50"
+                    >
+                      {tech.icon}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
 
+          {/* Community */}
           <motion.div
             initial={{ clipPath: "inset(0 0 100% 0)" }}
             whileInView={{ clipPath: "inset(0 0 0% 0)" }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="group"
           >
-            <div className="p-6 border rounded-lg bg-white/50 dark:bg-slate-800/50 hover:shadow-lg transition-all duration-300 cursor-default group-hover:border-slate-400 dark:group-hover:border-slate-600">
-              <div className="flex items-center gap-2 mb-3">
-                <Users className="w-5 h-5 text-slate-700 dark:text-slate-300" />
-                <h3 className="font-semibold">Community</h3>
+            <motion.div
+              whileHover={{
+                borderColor: "var(--brand-accent)",
+                boxShadow: "0 4px 20px var(--brand-accent-dim)",
+              }}
+              transition={{ duration: 0.2 }}
+              className="relative overflow-hidden p-6 border rounded-lg bg-white/50 dark:bg-slate-800/50 cursor-default h-full"
+              style={{ borderColor: "var(--brand-accent-border)" }}
+            >
+              <span className="absolute -bottom-1 right-3 text-8xl font-display font-black leading-none select-none pointer-events-none opacity-[0.04] dark:opacity-[0.06]">
+                03
+              </span>
+              <div
+                className="absolute left-0 top-0 bottom-0 w-0.5 opacity-40"
+                style={{ backgroundColor: "var(--brand-accent)" }}
+              />
+              <div className="flex items-center gap-2.5 mb-4 pl-3">
+                <div
+                  className="p-1.5 rounded-md"
+                  style={{ backgroundColor: "var(--brand-accent-dim)" }}
+                >
+                  <Users
+                    className="w-4 h-4"
+                    style={{ color: "var(--brand-accent)" }}
+                  />
+                </div>
+                <h3 className="font-mono font-semibold text-xs uppercase tracking-widest">
+                  Community
+                </h3>
               </div>
-              <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
-                Youth Mentor @ Livingstone Initiative
-              </p>
-              <p className="text-sm text-slate-600 dark:text-slate-400">
-                Choir Director | Producer | Recording Artist
-              </p>
-            </div>
+              <div className="pl-3">
+                <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
+                  Youth Mentor @ Livingstone Initiative
+                </p>
+                <p className="text-sm text-slate-600 dark:text-slate-400">
+                  Choir Director | Producer | Recording Artist
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
