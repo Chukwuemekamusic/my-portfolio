@@ -74,6 +74,22 @@ export const projects: Project[] = [
     demo: "https://ism-protocol.vercel.app/",
   },
   {
+    title: "ClothList — AI-Powered Clothing Resale Listing Tool",
+    description:
+      "WhatsApp-first listing tool for clothing resellers: photograph an item and Claude's vision API generates a draft listing with title, suggested price (GBP or NGN), and a polished two-paragraph description ready for eBay, Vinted, or Shopify. A separate polish endpoint refines seller notes into platform-ready copy. Built on Next.js App Router with per-IP rate limiting on both API routes, a PWA manifest and service-worker for mobile-first use, and four Vitest test suites covering core lib functions.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Claude API",
+      "Tailwind CSS",
+      "Vitest",
+    ],
+    majorTech: ["Fullstack", "AI"],
+    github: "https://github.com/Chukwuemekamusic/cloth_list",
+    image: "/clothlist.jpg",
+  },
+  {
     title: "Decentralised Crowdfunding Platform",
     description:
       "Full-stack Web3 dApp from smart contract to frontend: campaign lifecycle management, secure donation handling with reentrancy protection, and struct packing for gas efficiency — deployed and verified on Sepolia testnet. Integrated The Graph Protocol to index six on-chain event types (donations, campaign creation, withdrawals) via a custom subgraph, eliminating the need for a centralised database. Implemented IPFS/Pinata for decentralised media storage; achieved ~40% gas savings through struct packing.",
@@ -106,22 +122,6 @@ export const projects: Project[] = [
     github: "https://github.com/Chukwuemekamusic/smart-lottery",
     image: "/smart-lottery.jpg",
     demo: "https://sepolia.etherscan.io/address/0x2f0a079981ac1baa4fee85619f1f09bb12d9e9e4",
-  },
-  {
-    title: "ClothList — AI-Powered Clothing Resale Listing Tool",
-    description:
-      "WhatsApp-first listing tool for clothing resellers: photograph an item and Claude's vision API generates a draft listing with title, suggested price (GBP or NGN), and a polished two-paragraph description ready for eBay, Vinted, or Shopify. A separate polish endpoint refines seller notes into platform-ready copy. Built on Next.js App Router with per-IP rate limiting on both API routes, a PWA manifest and service-worker for mobile-first use, and four Vitest test suites covering core lib functions.",
-    tech: [
-      "Next.js",
-      "TypeScript",
-      "React",
-      "Claude API",
-      "Tailwind CSS",
-      "Vitest",
-    ],
-    majorTech: ["Fullstack", "AI"],
-    github: "https://github.com/Chukwuemekamusic/cloth_list",
-    image: "/clothlist.png",
   },
 ];
 

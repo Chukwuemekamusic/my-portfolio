@@ -104,7 +104,7 @@ export function ProjectCard({
         {/* Background image reveal */}
         {project.image && (
           <motion.div
-            className="absolute inset-0 z-0"
+            className="absolute inset-0 z-0 bg-white dark:bg-slate-900"
             variants={{
               initial: { clipPath: "inset(0 100% 0 0)" },
               hover: {
@@ -117,7 +117,7 @@ export function ProjectCard({
               src={project.image}
               alt={project.title}
               fill
-              className="object-cover opacity-20 dark:opacity-15"
+              className="object-cover opacity-25 dark:opacity-20"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </motion.div>
