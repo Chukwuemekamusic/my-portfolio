@@ -6,13 +6,11 @@ import {
   GraduationCap,
   Code,
   Users,
-  Download,
   ExternalLink,
   Github,
   Linkedin,
   Mail,
 } from "lucide-react";
-import { myConfig } from "@/lib/my-config";
 import { techSkills } from "@/data/skills";
 import { SplitText } from "@/components/split-text";
 import { MagneticButton } from "@/components/magnetic-button";
@@ -118,19 +116,6 @@ export default function Home() {
               </Button>
             </MagneticButton>
 
-            <Button
-              variant="outline"
-              className="gap-2 hover:bg-slate-100 dark:hover:bg-slate-800"
-            >
-              <a
-                href={myConfig.cvUrl}
-                download="Joseph E Anyaegbunam CV.pdf"
-                className="flex items-center gap-2"
-              >
-                <Download className="w-4 h-4" />
-                Download CV
-              </a>
-            </Button>
           </motion.div>
 
           <motion.div

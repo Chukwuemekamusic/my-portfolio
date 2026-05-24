@@ -72,6 +72,7 @@ export const projects: Project[] = [
     majorTech: ["Blockchain", "Fullstack"],
     github: "https://github.com/Chukwuemekamusic/isolated-lending-market",
     demo: "https://ism-protocol.vercel.app/",
+    image: "/ism.png",
   },
   {
     title: "ClothList — AI-Powered Clothing Resale Listing Tool",
@@ -106,6 +107,7 @@ export const projects: Project[] = [
     majorTech: ["Blockchain", "Fullstack"],
     github: "https://github.com/Chukwuemekamusic/my_crowdfunding",
     demo: "https://my-crowdfunding.vercel.app/",
+    image: "/crowdfunding.png",
   },
   {
     title: "Smart Lottery (Raffle) Contract System",
@@ -120,7 +122,7 @@ export const projects: Project[] = [
     ],
     majorTech: ["Blockchain"],
     github: "https://github.com/Chukwuemekamusic/smart-lottery",
-    image: "/smart-lottery.jpg",
+    // image: "/smart-lottery.jpg",
     demo: "https://sepolia.etherscan.io/address/0x2f0a079981ac1baa4fee85619f1f09bb12d9e9e4",
   },
 ];
