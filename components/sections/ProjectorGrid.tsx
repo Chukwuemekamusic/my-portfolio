@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Project } from "@/data/projects";
+import type { Project } from "@/data/project-types";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -13,7 +13,7 @@ export default function ProjectsGrid({ projects }: { projects: Project[] }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {projects.map((project) => (
-        <Card key={project.title} className="hover:shadow-lg transition-shadow">
+        <Card key={project.id} className="hover:shadow-lg transition-shadow">
           <CardHeader>
             <CardTitle>{project.title}</CardTitle>
             <CardDescription>{project.description}</CardDescription>

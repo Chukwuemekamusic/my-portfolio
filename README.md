@@ -20,6 +20,30 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Admin: managing projects
+
+`/admin` lets you add, edit, delete, reorder, feature and unpublish projects without touching code.
+Paste a GitHub URL (and a live URL if there is one), click **Generate with AI**, and Claude
+reads the repo's README, language mix and dependency manifests to draft the title, description,
+tech list and categories. You review and edit the draft, then save.
+
+**How saving works:** projects live in `data/projects.json`. In production each save is a single
+commit to `GITHUB_BRANCH` through the GitHub API (image uploads land in `public/projects/` in the
+same commit), and Vercel redeploys, so changes go live in about a minute. In local dev without a
+`GITHUB_TOKEN`, saves write straight to the working tree instead.
+
+### Setup (Vercel)
+
+1. Create a GitHub OAuth app (GitHub → Settings → Developer settings → OAuth Apps).
+   Callback URL: `https://<your-domain>/api/admin/auth/callback`.
+2. Create a fine-grained personal access token with **Contents: Read and write** on this repo.
+   To draft descriptions for private repos, also give it read access to those.
+3. Add the variables from `.env.example` in Vercel → Project → Settings → Environment Variables.
+4. Deploy, then visit `/admin`.
+
+Locally, copy `.env.example` to `.env.local`, set `ADMIN_SESSION_SECRET`, and leave
+`GITHUB_CLIENT_ID` empty to get a one-click local login.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

@@ -21,10 +21,15 @@ There is no test framework installed. `npm run build` is the primary correctness
 
 Content is defined in three places:
 
-- `data/projects.ts` — `Project[]` with optional `image` field. Cards with no `image` skip the hover-reveal feature; never assume the field is present.
+- `data/projects.json` — the project list (array order = display order). Edited by the `/admin` section, so keep it plain JSON; don't move content back into TS.
+- `data/projects.ts` — loads the JSON; exports `allProjects` (drafts included), `projects` (published, featured pinned first) and `featuredProjects`. Server-only in practice: client components import types from `data/project-types.ts` so drafts never reach the browser bundle. `image` is optional; cards with no `image` skip the hover-reveal feature.
 - `data/skills.tsx` — `techSkills` array of `{ name, icon }` used in the hero expertise card. Icons come from `react-icons/si`.
 - `data/experience.ts` — currently unused (ExperienceTimeline component is commented out in `app/page.tsx`).
 - `posts/*.mdx` — blog posts read at build time via `gray-matter` + `next-mdx-remote`. Required frontmatter: `title`, `date`, `description`, `readingTime`.
+
+### Admin (`app/admin/`)
+
+Single-user admin for projects. Auth is a hand-rolled GitHub OAuth flow (`app/api/admin/auth/*`) that issues an HMAC-signed cookie (`lib/admin/session.ts`); `middleware.ts` guards `/admin/*`, and every server action in `app/admin/actions.ts` re-checks with `requireAdmin()`. Saves go through `lib/admin/project-store.ts`: one commit via the GitHub Git Data API in production (Vercel redeploys), or direct file writes in local dev. "Generate with AI" (`lib/admin/generate.ts`) sends repo context from `lib/admin/repo-context.ts` to the Claude API with a structured-output schema. Env vars are documented in `.env.example`.
 
 ### Design Token System
 
@@ -74,7 +79,7 @@ The `body::after` pseudo-element adds a fixed-position SVG noise grain overlay (
 ### Component Conventions
 
 - **shadcn components** live in `components/ui/`. Add new ones with `npx shadcn@latest add <component>`. Always compose classes with `cn()` from `lib/utils.ts`.
-- **Tech brand icons** in `ProjectCard` come from `react-icons/si`. The `techMap` lookup in `components/project-card.tsx` maps tech name → `{ color, bg, icon? }`. Icons are optional — unknown techs render text-only badges with a fallback grey colour.
+- **Tech brand icons** in `ProjectCard` come from `react-icons/si`. The `techMap` lookup in `lib/tech-map.ts` maps tech name → `{ color, bg, icon? }`. Icons are optional — unknown techs render text-only badges with a fallback grey colour. Its keys are also the canonical tech names the AI draft generator is steered towards.
 - `components/split-text.tsx` — animates a string character-by-character with staggered entrance. Works with `bg-clip-text text-transparent` parents for gradient text.
 - `components/magnetic-button.tsx` — spring-driven cursor-follow; degrades gracefully on touch devices.
 
